@@ -7,6 +7,7 @@
 <title>Malkin's Date</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -19,170 +20,337 @@ body{
     align-items:center;
     justify-content:center;
     padding:20px;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
     background:
-        radial-gradient(circle at 20% 20%,rgba(255,100,150,.25),transparent 35%),
-        radial-gradient(circle at 80% 80%,rgba(150,80,255,.25),transparent 35%),
-        linear-gradient(135deg,#14091f,#26102f,#100817);
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,100,150,.25),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(150,80,255,.25),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #14091f,
+            #26102f,
+            #100817
+        );
+
     color:white;
     overflow:hidden;
 }
 
-/* Floating hearts */
+
+/* =========================
+   FLOATING HEARTS
+========================= */
 
 .floating-heart{
     position:fixed;
     bottom:-30px;
+
     font-size:18px;
+
     opacity:0;
     pointer-events:none;
-    animation:floatUp linear forwards;
+
+    animation:
+        floatUp linear forwards;
 }
 
 @keyframes floatUp{
+
     0%{
-        transform:translateY(0) scale(.7) rotate(0deg);
+        transform:
+            translateY(0)
+            scale(.7)
+            rotate(0deg);
+
         opacity:0;
     }
+
     15%{
         opacity:.7;
     }
+
     100%{
-        transform:translateY(-110vh) scale(1.4) rotate(25deg);
+        transform:
+            translateY(-110vh)
+            scale(1.4)
+            rotate(25deg);
+
         opacity:0;
     }
 }
 
-/* Main card */
+
+/* =========================
+   CARD
+========================= */
 
 .card{
+
     width:100%;
     max-width:440px;
+
     padding:34px 24px;
+
     text-align:center;
-    border:1px solid rgba(255,255,255,.15);
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
     border-radius:28px;
-    background:rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.08);
+
     backdrop-filter:blur(18px);
     -webkit-backdrop-filter:blur(18px);
-    box-shadow:0 25px 70px rgba(0,0,0,.4);
-    animation:cardIn 1.2s ease;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.4);
+
+    animation:
+        cardIn 1.2s ease;
 }
 
 @keyframes cardIn{
+
     from{
         opacity:0;
-        transform:translateY(30px) scale(.95);
+        transform:
+            translateY(30px)
+            scale(.95);
     }
+
     to{
         opacity:1;
-        transform:translateY(0) scale(1);
+        transform:
+            translateY(0)
+            scale(1);
     }
 }
 
-/* Heart */
+
+/* =========================
+   HEART
+========================= */
 
 .big-heart{
+
     font-size:58px;
+
     margin-bottom:20px;
-    animation:heartbeat 1.8s infinite;
-    filter:drop-shadow(0 0 18px rgba(255,80,140,.7));
+
+    animation:
+        heartbeat 1.8s infinite;
+
+    filter:
+        drop-shadow(
+            0 0 18px
+            rgba(255,80,140,.7)
+        );
 }
 
 @keyframes heartbeat{
-    0%,100%{transform:scale(1)}
-    15%{transform:scale(1.12)}
-    30%{transform:scale(1)}
-    45%{transform:scale(1.08)}
-    60%{transform:scale(1)}
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    15%{
+        transform:scale(1.12);
+    }
+
+    30%{
+        transform:scale(1);
+    }
+
+    45%{
+        transform:scale(1.08);
+    }
+
+    60%{
+        transform:scale(1);
+    }
 }
 
-/* Text */
+
+/* =========================
+   TEXT
+========================= */
 
 h1{
+
     font-size:30px;
+
     margin-bottom:12px;
+
     letter-spacing:-.5px;
 }
 
 .subtitle{
+
     font-size:15px;
+
     line-height:1.6;
-    color:rgba(255,255,255,.7);
+
+    color:
+        rgba(255,255,255,.7);
+
     margin-bottom:10px;
 }
 
 .question{
+
     font-size:22px;
+
     font-weight:700;
-    margin:20px 0 26px;
+
+    margin:
+        20px 0 26px;
 }
 
-/* Typing cursor */
+
+/* =========================
+   CURSOR
+========================= */
 
 .cursor{
+
     display:inline-block;
+
     width:2px;
     height:20px;
+
     background:white;
+
     margin-left:3px;
+
     vertical-align:middle;
-    animation:blink .7s infinite;
+
+    animation:
+        blink .7s infinite;
 }
 
 @keyframes blink{
-    50%{opacity:0}
+
+    50%{
+        opacity:0;
+    }
 }
 
-/* Buttons */
+
+/* =========================
+   BUTTONS
+========================= */
 
 .buttons{
+
     position:relative;
-    min-height:70px;
+
+    min-height:90px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
-    gap:18px;
+
+    gap:22px;
 }
 
 button{
+
     border:none;
+
     border-radius:16px;
-    padding:14px 25px;
+
+    padding:
+        14px 25px;
+
     font-size:16px;
+
     font-weight:700;
+
     cursor:pointer;
+
     transition:
         transform .25s ease,
         box-shadow .25s ease,
         opacity .25s ease;
-    -webkit-tap-highlight-color:transparent;
+
+    -webkit-tap-highlight-color:
+        transparent;
 }
 
+
+/* YES */
+
 .yes{
-    background:linear-gradient(135deg,#ff4f91,#ff176f);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4f91,
+            #ff176f
+        );
+
     color:white;
-    box-shadow:0 8px 25px rgba(255,40,110,.35);
-    animation:yesPulse 2s infinite;
+
+    box-shadow:
+        0 8px 25px
+        rgba(255,40,110,.35);
+
+    animation:
+        yesPulse 2s infinite;
 }
 
 .yes:active{
-    transform:scale(.94);
+
+    transform:
+        scale(.94);
 }
 
 @keyframes yesPulse{
+
     0%,100%{
-        box-shadow:0 8px 25px rgba(255,40,110,.35);
+        box-shadow:
+            0 8px 25px
+            rgba(255,40,110,.35);
     }
+
     50%{
-        box-shadow:0 8px 35px rgba(255,40,110,.65);
+        box-shadow:
+            0 8px 35px
+            rgba(255,40,110,.65);
     }
 }
 
+
+/* NO */
+
 .no{
-    background:rgba(255,255,255,.12);
+
+    background:
+        rgba(255,255,255,.12);
+
     color:white;
+
     position:absolute;
+
     transition:
         left .28s ease,
         top .28s ease,
@@ -190,319 +358,601 @@ button{
 }
 
 .no:active{
-    transform:scale(.92);
+
+    transform:
+        scale(.92);
 }
 
-/* Screens */
+
+/* =========================
+   SCREENS
+========================= */
 
 .screen{
+
     display:none;
-    animation:screenIn .6s ease;
+
+    animation:
+        screenIn .6s ease;
 }
 
 .screen.active{
+
     display:block;
 }
 
 @keyframes screenIn{
+
     from{
+
         opacity:0;
-        transform:translateY(18px);
+
+        transform:
+            translateY(18px);
     }
+
     to{
+
         opacity:1;
-        transform:translateY(0);
+
+        transform:
+            translateY(0);
     }
 }
 
-/* Date */
+
+/* =========================
+   DATE
+========================= */
 
 .date-input{
+
     width:100%;
+
     padding:15px;
+
     border:none;
+
     outline:none;
+
     border-radius:15px;
-    background:rgba(255,255,255,.12);
+
+    background:
+        rgba(255,255,255,.12);
+
     color:white;
+
     font-size:16px;
+
     margin:18px 0;
 }
 
 .date-input::-webkit-calendar-picker-indicator{
+
     filter:invert(1);
 }
 
 .continue{
+
     width:100%;
-    background:linear-gradient(135deg,#9d5cff,#6c38ff);
+
+    background:
+        linear-gradient(
+            135deg,
+            #9d5cff,
+            #6c38ff
+        );
+
     color:white;
+
     margin-top:8px;
 }
 
-/* Location */
+
+/* =========================
+   LOCATION
+========================= */
 
 .location-options{
+
     display:grid;
+
     gap:14px;
+
     margin-top:22px;
 }
 
 .location{
+
     padding:20px;
+
     border-radius:20px;
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.1);
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
     cursor:pointer;
+
     transition:.3s ease;
 }
 
 .location:hover{
-    transform:translateY(-3px);
-    background:rgba(255,255,255,.14);
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(255,255,255,.14);
 }
 
 .location.selected{
-    border-color:rgba(255,100,170,.8);
-    background:rgba(255,70,140,.16);
-    box-shadow:0 0 25px rgba(255,50,130,.2);
-    transform:scale(1.02);
+
+    border-color:
+        rgba(255,100,170,.8);
+
+    background:
+        rgba(255,70,140,.16);
+
+    box-shadow:
+        0 0 25px
+        rgba(255,50,130,.2);
+
+    transform:
+        scale(1.02);
 }
 
 .location-icon{
+
     font-size:30px;
+
     margin-bottom:8px;
 }
 
 .location-title{
+
     font-weight:700;
+
     font-size:18px;
 }
 
 .location-desc{
+
     font-size:13px;
-    color:rgba(255,255,255,.6);
+
+    color:
+        rgba(255,255,255,.6);
+
     margin-top:5px;
 }
 
-/* Final */
+
+/* =========================
+   SURPRISE
+========================= */
+
+#surpriseText{
+
+    min-height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px;
+}
+
+
+/* =========================
+   FINAL
+========================= */
 
 .final-heart{
+
     font-size:72px;
-    animation:finalHeart 1.2s ease infinite alternate;
+
+    animation:
+        finalHeart 1.2s ease
+        infinite alternate;
 }
 
 @keyframes finalHeart{
-    from{transform:scale(1)}
-    to{transform:scale(1.16)}
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.16);
+    }
 }
 
 .final-message{
+
     font-size:16px;
+
     line-height:1.7;
-    color:rgba(255,255,255,.75);
-    margin:15px 0 22px;
+
+    color:
+        rgba(255,255,255,.75);
+
+    margin:
+        15px 0 22px;
 }
 
 .small{
+
     font-size:13px;
-    color:rgba(255,255,255,.45);
+
+    color:
+        rgba(255,255,255,.45);
+
     margin-top:15px;
 }
 
-/* Mobile */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:380px){
+
     .card{
-        padding:28px 18px;
+
+        padding:
+            28px 18px;
     }
 
     h1{
+
         font-size:27px;
     }
 
     .question{
+
         font-size:20px;
     }
 }
+
 </style>
 </head>
 
+
 <body>
+
 
 <div class="card">
 
-    <!-- SCREEN 1 -->
 
-    <section id="screen1" class="screen active">
+<!-- =========================
+     SCREEN 1
+========================= -->
 
-        <div class="big-heart">❤️</div>
+<section
+    id="screen1"
+    class="screen active"
+>
 
-        <h1 id="hello"></h1>
+    <div class="big-heart">
+        ❤️
+    </div>
 
-        <p class="subtitle" id="intro"></p>
+    <h1 id="hello"></h1>
 
-        <div class="question" id="question"></div>
+    <p
+        class="subtitle"
+        id="intro"
+    ></p>
 
-        <div class="buttons" id="buttons">
-
-            <button class="yes" id="yesBtn">
-                YES ❤️
-            </button>
-
-            <button class="no" id="noBtn">
-                NO 🙃
-            </button>
-
-        </div>
-
-        <div class="small" id="noMessage"></div>
-
-    </section>
+    <div
+        class="question"
+        id="question"
+    ></div>
 
 
-    <!-- SCREEN 2 -->
-
-    <section id="screen2" class="screen">
-
-        <div class="big-heart">💗</div>
-
-        <h1>You choose.</h1>
-
-        <p class="subtitle">
-            Pick a day. Any day you want.
-        </p>
-
-        <input
-            type="date"
-            id="dateInput"
-            class="date-input"
-        >
+    <div
+        class="buttons"
+        id="buttons"
+    >
 
         <button
-            class="continue"
-            id="dateContinue"
+            class="yes"
+            id="yesBtn"
         >
-            CONTINUE ✨
+            YES ❤️
         </button>
 
-    </section>
-
-
-    <!-- SCREEN 3 -->
-
-    <section id="screen3" class="screen">
-
-        <div class="big-heart">📍</div>
-
-        <h1>And where?</h1>
-
-        <p class="subtitle">
-            You decide where our little adventure happens.
-        </p>
-
-        <div class="location-options">
-
-            <div class="location" data-location="Cozy time at home">
-
-                <div class="location-icon">🏠</div>
-
-                <div class="location-title">
-                    Stay In
-                </div>
-
-                <div class="location-desc">
-                    Cozy time at home
-                </div>
-
-            </div>
-
-
-            <div class="location" data-location="Let's go somewhere">
-
-                <div class="location-icon">🌆</div>
-
-                <div class="location-title">
-                    Go Out
-                </div>
-
-                <div class="location-desc">
-                    Let's go somewhere
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SCREEN 4 -->
-
-    <section id="screen4" class="screen">
-
-        <div class="big-heart">💞</div>
-
-        <h1>It's a date.</h1>
-
-        <p class="subtitle">
-            Malkin × Pistachio Askrim
-        </p>
-
-        <p id="finalDate"></p>
-
-        <p id="finalLocation" style="margin-top:8px;"></p>
-
-        <p class="final-message">
-            You picked the date.<br>
-            I'll take care of the rest. ❤️
-        </p>
 
         <button
-            class="continue"
-            id="confirmBtn"
+            class="no"
+            id="noBtn"
         >
-            CONFIRM DATE ✨
+            NO 🙃
         </button>
 
-    </section>
+    </div>
 
 
-    <!-- SCREEN 5 -->
+    <div
+        class="small"
+        id="noMessage"
+    ></div>
 
-    <section id="screen5" class="screen">
+</section>
 
-        <div class="final-heart">
-            ❤️
+
+
+<!-- =========================
+     SCREEN 2
+========================= -->
+
+<section
+    id="screen2"
+    class="screen"
+>
+
+    <div class="big-heart">
+        💗
+    </div>
+
+
+    <h1>
+        You choose.
+    </h1>
+
+
+    <p class="subtitle">
+        Pick a day. Any day you want.
+    </p>
+
+
+    <input
+        type="date"
+        id="dateInput"
+        class="date-input"
+    >
+
+
+    <button
+        class="continue"
+        id="dateContinue"
+    >
+        CONTINUE ✨
+    </button>
+
+</section>
+
+
+
+<!-- =========================
+     SCREEN 2.5
+========================= -->
+
+<section
+    id="screen25"
+    class="screen"
+>
+
+    <div class="big-heart">
+        👀
+    </div>
+
+
+    <h1>
+        Wait...
+    </h1>
+
+
+    <p class="subtitle">
+        You actually picked a date.
+    </p>
+
+
+    <div
+        class="question"
+        id="surpriseText"
+    >
+        I have something to say.
+    </div>
+
+
+    <button
+        class="continue"
+        id="surpriseBtn"
+    >
+        TELL ME ✨
+    </button>
+
+</section>
+
+
+
+<!-- =========================
+     SCREEN 3
+========================= -->
+
+<section
+    id="screen3"
+    class="screen"
+>
+
+    <div class="big-heart">
+        📍
+    </div>
+
+
+    <h1>
+        And where?
+    </h1>
+
+
+    <p class="subtitle">
+        You decide where our little adventure happens.
+    </p>
+
+
+    <div class="location-options">
+
+
+        <div
+            class="location"
+            data-location="Cozy time at home"
+        >
+
+            <div class="location-icon">
+                🏠
+            </div>
+
+            <div class="location-title">
+                Stay In
+            </div>
+
+            <div class="location-desc">
+                Cozy time at home
+            </div>
+
         </div>
 
-        <h1>
-            Okay, it's official.
-        </h1>
 
-        <p class="final-message">
-            Malkin, you just made<br>
-            Pistachio Askrim very happy.
-            <br><br>
-            Now get ready for our little adventure. ✨
-        </p>
 
-        <div class="small">
-            No cancellations accepted. 😌
+        <div
+            class="location"
+            data-location="Let's go somewhere"
+        >
+
+            <div class="location-icon">
+                🌆
+            </div>
+
+            <div class="location-title">
+                Go Out
+            </div>
+
+            <div class="location-desc">
+                Let's go somewhere
+            </div>
+
         </div>
 
-    </section>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SCREEN 4
+========================= -->
+
+<section
+    id="screen4"
+    class="screen"
+>
+
+    <div class="big-heart">
+        💞
+    </div>
+
+
+    <h1>
+        It's a date.
+    </h1>
+
+
+    <p class="subtitle">
+        Malkin × Pistachio Askrim
+    </p>
+
+
+    <p id="finalDate"></p>
+
+
+    <p
+        id="finalLocation"
+        style="margin-top:8px;"
+    ></p>
+
+
+    <p class="final-message">
+
+        You picked the date.<br>
+
+        I'll take care of the rest. ❤️
+
+    </p>
+
+
+    <button
+        class="continue"
+        id="confirmBtn"
+    >
+        CONFIRM DATE ✨
+    </button>
+
+</section>
+
+
+
+<!-- =========================
+     SCREEN 5
+========================= -->
+
+<section
+    id="screen5"
+    class="screen"
+>
+
+    <div class="final-heart">
+        ❤️
+    </div>
+
+
+    <h1>
+        Okay, it's official.
+    </h1>
+
+
+    <p class="final-message">
+
+        Malkin, you just made<br>
+
+        Pistachio Askrim very happy.
+
+        <br><br>
+
+        Now get ready for our little adventure. ✨
+
+    </p>
+
+
+    <div class="small">
+
+        No cancellations accepted. 😌
+
+    </div>
+
+</section>
+
 
 </div>
 
 
+
 <script>
+
 
 /* =========================
    SOUND SYSTEM
 ========================= */
 
 let audioContext;
+
 
 function initAudio(){
 
@@ -513,17 +963,27 @@ function initAudio(){
             window.webkitAudioContext;
 
         if(AudioCtx){
-            audioContext = new AudioCtx();
+
+            audioContext =
+                new AudioCtx();
+
         }
+
     }
+
 
     if(
         audioContext &&
-        audioContext.state === "suspended"
+        audioContext.state ===
+        "suspended"
     ){
+
         audioContext.resume();
+
     }
+
 }
+
 
 
 function playSound(
@@ -535,62 +995,114 @@ function playSound(
 
     if(!audioContext) return;
 
+
     const oscillator =
-        audioContext.createOscillator();
+        audioContext
+        .createOscillator();
+
 
     const gain =
-        audioContext.createGain();
+        audioContext
+        .createGain();
 
-    oscillator.type = type;
+
+    oscillator.type =
+        type;
+
 
     oscillator.frequency.value =
         frequency;
+
 
     gain.gain.setValueAtTime(
         volume,
         audioContext.currentTime
     );
 
+
     gain.gain.exponentialRampToValueAtTime(
         0.001,
-        audioContext.currentTime + duration
+        audioContext.currentTime +
+        duration
     );
 
+
     oscillator.connect(gain);
-    gain.connect(audioContext.destination);
+
+    gain.connect(
+        audioContext.destination
+    );
+
 
     oscillator.start();
 
+
     oscillator.stop(
-        audioContext.currentTime + duration
+        audioContext.currentTime +
+        duration
     );
+
 }
+
 
 
 function clickSound(){
+
     initAudio();
-    playSound(620,0.07,"sine",0.035);
+
+    playSound(
+        620,
+        .07,
+        "sine",
+        .035
+    );
+
 }
+
 
 
 function successSound(){
 
     initAudio();
 
-    playSound(523,0.12,"sine",0.04);
+
+    playSound(
+        523,
+        .12,
+        "sine",
+        .04
+    );
+
 
     setTimeout(()=>{
-        playSound(659,0.12,"sine",0.04);
+
+        playSound(
+            659,
+            .12,
+            "sine",
+            .04
+        );
+
     },90);
 
+
     setTimeout(()=>{
-        playSound(784,0.18,"sine",0.04);
+
+        playSound(
+            784,
+            .18,
+            "sine",
+            .04
+        );
+
     },180);
+
 }
 
 
+
 /* =========================
-   TYPEWRITER OPENING
+   TYPEWRITER
 ========================= */
 
 function typeText(
@@ -602,11 +1114,16 @@ function typeText(
 
     let i = 0;
 
+
     element.innerHTML =
         '<span class="cursor"></span>';
 
+
     const cursor =
-        element.querySelector(".cursor");
+        element.querySelector(
+            ".cursor"
+        );
+
 
     function type(){
 
@@ -619,34 +1136,61 @@ function typeText(
 
             i++;
 
-            setTimeout(type,speed);
 
-        }else{
+            setTimeout(
+                type,
+                speed
+            );
+
+        }
+
+        else{
 
             cursor.remove();
 
+
             if(callback){
+
                 callback();
+
             }
+
         }
+
     }
 
+
     type();
+
 }
 
+
+
+/* =========================
+   OPENING
+========================= */
 
 window.addEventListener(
     "load",
     ()=>{
 
         const hello =
-            document.getElementById("hello");
+            document.getElementById(
+                "hello"
+            );
+
 
         const intro =
-            document.getElementById("intro");
+            document.getElementById(
+                "intro"
+            );
+
 
         const question =
-            document.getElementById("question");
+            document.getElementById(
+                "question"
+            );
+
 
         typeText(
             hello,
@@ -684,6 +1228,7 @@ window.addEventListener(
 );
 
 
+
 /* =========================
    FLOATING HEARTS
 ========================= */
@@ -691,31 +1236,55 @@ window.addEventListener(
 function createHeart(){
 
     const heart =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
+
 
     heart.className =
         "floating-heart";
 
+
     heart.innerHTML =
-        Math.random() > .5 ? "♥" : "♡";
+        Math.random() > .5
+        ? "♥"
+        : "♡";
+
 
     heart.style.left =
-        Math.random() * 100 + "vw";
+        Math.random() * 100 +
+        "vw";
+
 
     heart.style.fontSize =
-        (12 + Math.random()*18) + "px";
+        (12 + Math.random()*18) +
+        "px";
+
 
     heart.style.animationDuration =
-        (5 + Math.random()*5) + "s";
+        (5 + Math.random()*5) +
+        "s";
 
-    document.body.appendChild(heart);
+
+    document.body.appendChild(
+        heart
+    );
+
 
     setTimeout(()=>{
+
         heart.remove();
+
     },10000);
+
 }
 
-setInterval(createHeart,1800);
+
+setInterval(
+    createHeart,
+    1800
+);
+
 
 
 /* =========================
@@ -727,18 +1296,33 @@ function showScreen(number){
     document
         .querySelectorAll(".screen")
         .forEach(screen=>{
-            screen.classList.remove("active");
+
+            screen.classList.remove(
+                "active"
+            );
+
         });
 
+
     document
-        .getElementById("screen"+number)
-        .classList.add("active");
+        .getElementById(
+            "screen" + number
+        )
+        .classList.add(
+            "active"
+        );
+
 
     window.scrollTo({
+
         top:0,
+
         behavior:"smooth"
+
     });
+
 }
+
 
 
 /* =========================
@@ -746,16 +1330,27 @@ function showScreen(number){
 ========================= */
 
 const yesBtn =
-    document.getElementById("yesBtn");
+    document.getElementById(
+        "yesBtn"
+    );
+
 
 const noBtn =
-    document.getElementById("noBtn");
+    document.getElementById(
+        "noBtn"
+    );
+
 
 const buttons =
-    document.getElementById("buttons");
+    document.getElementById(
+        "buttons"
+    );
+
 
 const noMessage =
-    document.getElementById("noMessage");
+    document.getElementById(
+        "noMessage"
+    );
 
 
 const messages = [
@@ -776,7 +1371,9 @@ const messages = [
 
 ];
 
+
 let messageIndex = 0;
+
 
 
 yesBtn.addEventListener(
@@ -785,57 +1382,82 @@ yesBtn.addEventListener(
 
         clickSound();
 
+
         setTimeout(()=>{
+
             successSound();
+
         },100);
 
+
         showScreen(2);
+
     }
 );
+
 
 
 function moveNo(){
 
     clickSound();
 
+
     const card =
-        document.querySelector(".card");
+        document.querySelector(
+            ".card"
+        );
+
 
     const cardRect =
         card.getBoundingClientRect();
 
+
     const noWidth =
         noBtn.offsetWidth;
+
 
     const noHeight =
         noBtn.offsetHeight;
 
+
     let x;
+
     let y;
 
     let safe = false;
 
-    /*
-       NO button এখন পুরো card-এর
-       ভিতরে random position নেবে।
-    */
 
-    for(let i = 0; i < 150; i++){
+    for(
+        let i = 0;
+        i < 150;
+        i++
+    ){
 
         x =
             15 +
             Math.random() *
-            (cardRect.width - noWidth - 30);
+            (
+                cardRect.width -
+                noWidth -
+                30
+            );
+
 
         y =
             120 +
             Math.random() *
-            (cardRect.height - noHeight - 160);
+            (
+                cardRect.height -
+                noHeight -
+                160
+            );
+
 
         const noCenterX =
             cardRect.left +
             x +
             noWidth / 2;
+
 
         const noCenterY =
             cardRect.top +
@@ -846,9 +1468,11 @@ function moveNo(){
         const yesRect =
             yesBtn.getBoundingClientRect();
 
+
         const yesCenterX =
             yesRect.left +
             yesRect.width / 2;
+
 
         const yesCenterY =
             yesRect.top +
@@ -857,60 +1481,78 @@ function moveNo(){
 
         const distance =
             Math.sqrt(
+
                 Math.pow(
-                    noCenterX - yesCenterX,
-                    2
-                ) +
-                Math.pow(
-                    noCenterY - yesCenterY,
+                    noCenterX -
+                    yesCenterX,
                     2
                 )
+
+                +
+
+                Math.pow(
+                    noCenterY -
+                    yesCenterY,
+                    2
+                )
+
             );
 
 
-        /*
-           YES থেকে যথেষ্ট দূরে হলে
-           position গ্রহণ করবে।
-        */
-
-        if(distance > 150){
+        if(
+            distance > 150
+        ){
 
             safe = true;
+
             break;
+
         }
+
     }
 
 
     if(safe){
 
-        /*
-           card-এর relative position
-        */
-
         noBtn.style.position =
             "fixed";
 
+
         noBtn.style.left =
-            (cardRect.left + x) + "px";
+            (
+                cardRect.left +
+                x
+            ) + "px";
+
 
         noBtn.style.top =
-            (cardRect.top + y) + "px";
+            (
+                cardRect.top +
+                y
+            ) + "px";
 
     }
 
 
     noMessage.textContent =
-        messages[messageIndex];
+        messages[
+            messageIndex
+        ];
+
 
     messageIndex++;
 
-    if(
-        messageIndex >= messages.length
-    ){
-        messageIndex = 0;
-    }
-}
 
+    if(
+        messageIndex >=
+        messages.length
+    ){
+
+        messageIndex = 0;
+
+    }
+
+}
 
 
 noBtn.addEventListener(
@@ -919,15 +1561,22 @@ noBtn.addEventListener(
 );
 
 
+
 /* =========================
    DATE
 ========================= */
 
 const dateInput =
-    document.getElementById("dateInput");
+    document.getElementById(
+        "dateInput"
+    );
+
 
 const dateContinue =
-    document.getElementById("dateContinue");
+    document.getElementById(
+        "dateContinue"
+    );
+
 
 
 dateContinue.addEventListener(
@@ -935,6 +1584,7 @@ dateContinue.addEventListener(
     ()=>{
 
         initAudio();
+
 
         if(!dateInput.value){
 
@@ -945,30 +1595,141 @@ dateContinue.addEventListener(
                 .025
             );
 
+
             dateInput.animate(
+
                 [
-                    {transform:"translateX(-6px)"},
-                    {transform:"translateX(6px)"},
-                    {transform:"translateX(-4px)"},
-                    {transform:"translateX(4px)"},
-                    {transform:"translateX(0)"}
+
+                    {
+                        transform:
+                            "translateX(-6px)"
+                    },
+
+                    {
+                        transform:
+                            "translateX(6px)"
+                    },
+
+                    {
+                        transform:
+                            "translateX(-4px)"
+                    },
+
+                    {
+                        transform:
+                            "translateX(4px)"
+                    },
+
+                    {
+                        transform:
+                            "translateX(0)"
+                    }
+
                 ],
+
                 {
                     duration:350
                 }
+
             );
 
+
             return;
+
         }
+
 
         successSound();
 
+
         setTimeout(()=>{
-            showScreen(3);
+
+            showScreen(25);
+
         },180);
 
     }
 );
+
+
+
+/* =========================
+   SURPRISE
+========================= */
+
+document
+    .getElementById(
+        "surpriseBtn"
+    )
+    .addEventListener(
+        "click",
+        ()=>{
+
+            clickSound();
+
+
+            const text =
+                document.getElementById(
+                    "surpriseText"
+                );
+
+
+            text.animate(
+
+                [
+
+                    {
+                        opacity:0,
+                        transform:
+                            "scale(.8)"
+                    },
+
+                    {
+                        opacity:1,
+                        transform:
+                            "scale(1.05)"
+                    },
+
+                    {
+                        opacity:1,
+                        transform:
+                            "scale(1)"
+                    }
+
+                ],
+
+                {
+
+                    duration:500,
+
+                    easing:
+                        "ease-out"
+
+                }
+
+            );
+
+
+            text.textContent =
+                "Good choice. I was hoping you'd say yes. ❤️";
+
+
+            setTimeout(()=>{
+
+                successSound();
+
+            },120);
+
+
+            setTimeout(()=>{
+
+                showScreen(3);
+
+            },1100);
+
+        }
+    );
+
 
 
 /* =========================
@@ -976,66 +1737,101 @@ dateContinue.addEventListener(
 ========================= */
 
 const locations =
-    document.querySelectorAll(".location");
+    document.querySelectorAll(
+        ".location"
+    );
+
 
 let selectedLocation = "";
 
 
-locations.forEach(location=>{
 
-    location.addEventListener(
-        "click",
-        ()=>{
+locations.forEach(
+    location=>{
 
-            clickSound();
+        location.addEventListener(
+            "click",
+            ()=>{
 
-            locations.forEach(item=>{
-                item.classList.remove("selected");
-            });
-
-            location.classList.add("selected");
-
-            selectedLocation =
-                location.dataset.location;
+                clickSound();
 
 
-            setTimeout(()=>{
+                locations.forEach(
+                    item=>{
 
-                const selectedDate =
-                    new Date(
-                        dateInput.value +
-                        "T00:00:00"
-                    );
+                        item.classList.remove(
+                            "selected"
+                        );
 
-                const formattedDate =
-                    selectedDate.toLocaleDateString(
-                        "en-US",
-                        {
-                            weekday:"long",
-                            month:"long",
-                            day:"numeric",
-                            year:"numeric"
-                        }
-                    );
+                    }
+                );
 
-                document
-                    .getElementById("finalDate")
-                    .textContent =
-                    formattedDate;
 
-                document
-                    .getElementById("finalLocation")
-                    .textContent =
-                    selectedLocation;
+                location.classList.add(
+                    "selected"
+                );
 
-                showScreen(4);
 
-            },450);
+                selectedLocation =
+                    location.dataset.location;
 
-        }
-    );
 
-});
+                setTimeout(()=>{
+
+                    const selectedDate =
+                        new Date(
+                            dateInput.value +
+                            "T00:00:00"
+                        );
+
+
+                    const formattedDate =
+                        selectedDate.toLocaleDateString(
+                            "en-US",
+                            {
+
+                                weekday:
+                                    "long",
+
+                                month:
+                                    "long",
+
+                                day:
+                                    "numeric",
+
+                                year:
+                                    "numeric"
+
+                            }
+                        );
+
+
+                    document
+                        .getElementById(
+                            "finalDate"
+                        )
+                        .textContent =
+                        formattedDate;
+
+
+                    document
+                        .getElementById(
+                            "finalLocation"
+                        )
+                        .textContent =
+                        selectedLocation;
+
+
+                    showScreen(4);
+
+                },450);
+
+            }
+        );
+
+    }
+);
+
 
 
 /* =========================
@@ -1043,26 +1839,28 @@ locations.forEach(location=>{
 ========================= */
 
 document
-    .getElementById("confirmBtn")
+    .getElementById(
+        "confirmBtn"
+    )
     .addEventListener(
         "click",
         ()=>{
 
             successSound();
 
+
             showScreen(5);
 
-            /* Burst of hearts */
 
             for(
-                let i=0;
-                i<18;
+                let i = 0;
+                i < 18;
                 i++
             ){
 
                 setTimeout(
                     createHeart,
-                    i*80
+                    i * 80
                 );
 
             }
@@ -1071,12 +1869,17 @@ document
     );
 
 
-/* Initialize sound on first user interaction */
+
+/* =========================
+   FIRST USER INTERACTION
+========================= */
 
 document.addEventListener(
     "pointerdown",
     ()=>{
+
         initAudio();
+
     },
     {
         once:true
@@ -1086,4 +1889,4 @@ document.addEventListener(
 </script>
 
 </body>
-</html>
+    </html>
